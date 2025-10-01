@@ -1,86 +1,76 @@
+import junit.framework.TestCase.assertEquals
+import kotlin.test.assertFailsWith
 import org.junit.Test
-import org.junit.Ignore
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
-import kotlin.test.assertEquals
-import kotlin.test.assertFailsWith
+import kotlin.collections.emptyList
+import protein_translation.src.main.kotlin.ProteinTranslation
 
 class ProteinTranslationTest {
     @Test
     fun emptyRNAHasNoProteins() {
-        assertEquals(emptyList(), translate(null))
+        assertEquals(emptyList<String>(), ProteinTranslation.translate(null))
     }
 
-    @Ignore
     @Test
     fun `Sequence of two protein codons translates into proteins`() {
-        assertEquals(listOf("Phenylalanine", "Phenylalanine"), translate("UUUUUU"))
+        assertEquals(listOf("Phenylalanine", "Phenylalanine"), ProteinTranslation.translate("UUUUUU"))
     }
 
-    @Ignore
     @Test
     fun `Sequence of two different protein codons translates into proteins`() {
-        assertEquals(listOf("Leucine", "Leucine"), translate("UUAUUG"))
+        assertEquals(listOf("Leucine", "Leucine"), ProteinTranslation.translate("UUAUUG"))
     }
 
-    @Ignore
     @Test
     fun `Translate RNA strand into correct protein list`() {
-        assertEquals(listOf("Methionine", "Phenylalanine", "Tryptophan"), translate("AUGUUUUGG"))
+        assertEquals(listOf("Methionine", "Phenylalanine", "Tryptophan"), ProteinTranslation.translate("AUGUUUUGG"))
     }
 
-    @Ignore
     @Test
     fun `Translation stops if STOP codon at beginning of sequence`() {
-        assertEquals(emptyList(), translate("UAGUGG"))
+        assertEquals(emptyList<String>(), ProteinTranslation.translate("UAGUGG"))
     }
 
-    @Ignore
     @Test
     fun `Translation stops if STOP codon at end of three-codon sequence`() {
-        assertEquals(listOf("Methionine", "Phenylalanine"), translate("AUGUUUUAA"))
+        assertEquals(listOf("Methionine", "Phenylalanine"), ProteinTranslation.translate("AUGUUUUAA"))
     }
 
-    @Ignore
     @Test
     fun `Translation stops if STOP codon in middle of three-codon sequence`() {
-        assertEquals(listOf("Tryptophan"), translate("UGGUAGUGG"))
+        assertEquals(listOf("Tryptophan"), ProteinTranslation.translate("UGGUAGUGG"))
     }
 
-    @Ignore
     @Test
     fun `Translation stops if STOP codon in middle of six-codon sequence`() {
-        assertEquals(listOf("Tryptophan", "Cysteine", "Tyrosine"), translate("UGGUGUUAUUAAUGGUUU"))
+        assertEquals(listOf("Tryptophan", "Cysteine", "Tyrosine"), ProteinTranslation.translate("UGGUGUUAUUAAUGGUUU"))
     }
 
-    @Ignore
     @Test
     fun `Non-existing codon can't translate`() {
         assertFailsWith<IllegalArgumentException>("Invalid codon") {
-            translate("AAA")
+            ProteinTranslation.translate("AAA")
         }
     }
 
-    @Ignore
     @Test
     fun `Unknown amino acids, not part of a codon, can't translate`() {
         assertFailsWith<IllegalArgumentException>("Invalid codon") {
-            translate("XYZ")
+            ProteinTranslation.translate("XYZ")
         }
     }
 
-    @Ignore
     @Test
     fun `Incomplete RNA sequence can't translate`() {
         assertFailsWith<IllegalArgumentException>("Invalid codon") {
-            translate("AUGU")
+            ProteinTranslation.translate("AUGU")
         }
     }
 
-    @Ignore
     @Test
     fun `Incomplete RNA sequence can translate if valid until a STOP codon`() {
-        assertEquals(listOf("Phenylalanine", "Phenylalanine"), translate("UUCUUCUAAUGGU"))
+        assertEquals(listOf("Phenylalanine", "Phenylalanine"), ProteinTranslation.translate("UUCUUCUAAUGGU"))
     }
 }
 
@@ -102,12 +92,11 @@ class ParameterizedProteinTranslationTest(private val protein: String, private v
         }
     }
 
-    @Ignore
     @Test
     fun `Protein codon translates into protein`() {
         codons.forEachIndexed { index, codon ->
             val seq = index + 1
-            assertEquals(listOf(protein), translate(codon), "${protein} RNA sequence ${seq} translates into ${protein}")
+            assertEquals("${protein} RNA sequence ${seq} translates into ${protein}", listOf(protein), ProteinTranslation.translate(codon))
         }
     }
 }

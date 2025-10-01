@@ -13,6 +13,7 @@ dependencies {
     
     testImplementation("junit:junit:4.13.2")
     testImplementation(kotlin("test-junit"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
 
 tasks.withType<Test> {
