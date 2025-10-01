@@ -1,3 +1,5 @@
+package reverse_string.src.main.kotlin
+
 fun reverse(input: String): String {
     var reversedString = ""
     val finalIndex = input.length - 1

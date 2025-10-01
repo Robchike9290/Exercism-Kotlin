@@ -1,4 +1,5 @@
-import org.junit.Ignore
+package reverse_string.src.main.kotlin
+
 import org.junit.Test
 import kotlin.test.assertEquals
 
