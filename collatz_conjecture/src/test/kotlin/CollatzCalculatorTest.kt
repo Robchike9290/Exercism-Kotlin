@@ -2,7 +2,7 @@ import collatz_conjecture.src.main.kotlin.CollatzCalculator
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.ExpectedException
-import kotlin.test.assertEquals
+import junit.framework.TestCase.assertEquals
 
 class CollatzCalculatorTest {
 

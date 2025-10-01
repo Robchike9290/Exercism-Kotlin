@@ -1,12 +1,12 @@
-import hello_world.src.main.kotlin.hello
+import hello_world.src.main.kotlin.HelloWorld
 import org.junit.Test
-import kotlin.test.assertEquals
+import junit.framework.TestCase.assertEquals
 
 class HelloWorldTest {
 
     @Test
     fun helloWorldTest() {
-        assertEquals("Hello, World!", hello())
+        assertEquals("Hello, World!", HelloWorld.hello())
     }
 
 }

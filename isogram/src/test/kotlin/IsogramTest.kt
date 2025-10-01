@@ -2,7 +2,7 @@ import isogram.src.main.kotlin.Isogram
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
-import kotlin.test.assertEquals
+import junit.framework.TestCase.assertEquals
 
 @RunWith(Parameterized::class)
 class IsogramTest(val input: String, val expectedOutput: Boolean) {

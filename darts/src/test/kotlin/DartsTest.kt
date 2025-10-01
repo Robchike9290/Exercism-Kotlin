@@ -1,6 +1,6 @@
 import darts.src.main.kotlin.Darts
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import org.junit.Test
+import junit.framework.TestCase.assertEquals
 
 class DartsTest {
 

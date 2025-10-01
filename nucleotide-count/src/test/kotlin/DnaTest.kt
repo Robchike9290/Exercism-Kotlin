@@ -1,6 +1,6 @@
 import nucleotide_count.src.main.kotlin.Dna
 import org.junit.Test
-import kotlin.test.assertEquals
+import junit.framework.TestCase.assertEquals
 
 class DnaTest {
 

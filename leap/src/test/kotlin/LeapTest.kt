@@ -1,7 +1,7 @@
+import junit.framework.TestCase.assertFalse
+import junit.framework.TestCase.assertTrue
 import leap.src.main.kotlin.Year
 import org.junit.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
 
 class LeapTest {
     @Test
