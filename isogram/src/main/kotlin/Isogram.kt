@@ -1,3 +1,5 @@
+package isogram.src.main.kotlin
+
 object Isogram {
 
     fun isIsogram(input: String): Boolean {

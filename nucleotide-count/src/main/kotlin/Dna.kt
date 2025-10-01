@@ -1,3 +1,5 @@
+package nucleotide_count.src.main.kotlin
+
 class Dna(sequence: String) {
     val sequenceCharArray = sequence.uppercase().toCharArray()
     init {

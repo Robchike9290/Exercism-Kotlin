@@ -1,5 +1,5 @@
+import etl.src.main.kotlin.ETL
 import org.junit.Test
-import org.junit.Ignore
 import kotlin.test.assertEquals
 
 class ETLTest {

@@ -1,6 +1,4 @@
 import java.math.BigInteger
-import java.math.BigDecimal
-import java.lang.Math.pow
 
 object Board {
 
@@ -12,7 +10,7 @@ object Board {
     fun getTotalGrainCount(): BigInteger {
         var totalGrainCount: BigInteger = BigInteger.valueOf(0)
         for (i in 1..64) {
-            totalGrainCount = totalGrainCount + getGrainCountForSquare(i)
+            totalGrainCount += getGrainCountForSquare(i)
         }
         return totalGrainCount
     }

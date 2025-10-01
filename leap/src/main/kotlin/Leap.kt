@@ -1,3 +1,5 @@
+package leap.src.main.kotlin
+
 data class Year(val year: Int) {
     val isLeap: Boolean = when {
         year % 400 == 0 -> true

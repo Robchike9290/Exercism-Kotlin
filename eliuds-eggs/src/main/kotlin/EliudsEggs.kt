@@ -1,3 +1,5 @@
+package eliuds_eggs.src.main.kotlin
+
 object EliudsEggs {
 
     fun eggCount(number: Int): Int{

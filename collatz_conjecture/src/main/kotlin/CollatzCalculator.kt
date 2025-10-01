@@ -1,3 +1,5 @@
+package collatz_conjecture.src.main.kotlin
+
 object CollatzCalculator {
     fun computeStepCount(start: Int): Int {
         require(start > 0) { "Start must be greater than zero, was $start" }
@@ -6,7 +8,7 @@ object CollatzCalculator {
         var current = start
         while (current != 1) {
             if (current % 2 == 0) {
-                current = current / 2
+                current /= 2
             } else {
                 current = (current * 3) + 1
             }
