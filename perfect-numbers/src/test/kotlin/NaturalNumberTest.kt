@@ -1,8 +1,8 @@
 import org.junit.Test
 
 import org.junit.Assert.assertEquals
-import perfect_numbers.src.main.kotlin.Classification
-import perfect_numbers.src.main.kotlin.NaturalNumber
+import `perfect-numbers`.src.main.kotlin.Classification
+import `perfect-numbers`.src.main.kotlin.NaturalNumber
 
 class NaturalNumberTest {
 

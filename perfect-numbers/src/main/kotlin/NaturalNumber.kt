@@ -1,4 +1,4 @@
-package perfect_numbers.src.main.kotlin
+package `perfect-numbers`.src.main.kotlin
 
 
 enum class Classification {
